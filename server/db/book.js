@@ -7,7 +7,7 @@ const book = {
     // 封面图
     books_img:{
         type:String,
-        requird:true
+        requird:false
     },
     // 书籍名
     books_name:{
@@ -22,7 +22,7 @@ const book = {
     // 背景图片
     book_image:{
         type:String,
-        requird: true
+        requird: false
     },
     // 关键字
     books_keyword:{
@@ -32,6 +32,16 @@ const book = {
     // 数量
     amount:{
         type:Number,
+        requird:true
+    },
+    // 区域
+    area:{
+        type:String,
+        requird:true
+    },
+    //种类
+    class:{
+        type:String,
         requird:true
     },
     create_time:{

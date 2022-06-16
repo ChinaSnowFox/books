@@ -1,5 +1,16 @@
 <template>
-  <a-form :model="formModal" @submit="onSubmit" ref="form" :rules="rules">
+  <a-form
+      :label-col-props="{
+        span: 6, offset: 0
+      }"
+      :wrapper-col-props="{
+        span: 16, offset: 0
+      }"
+      :model="formModal"
+      @submit="onSubmit"
+      ref="form"
+      :rules="rules"
+  >
     <a-modal v-model:visible="store.visible" esc-to-close footer>
       <template #title>
         添加书籍
@@ -30,10 +41,6 @@
           </a-option>
         </a-select>
       </a-form-item>
-      <!--      <a-form-item show-colon>
-              <a-uplaod></a-uplaod>
-            </a-form-item>-->
-
       <template #footer>
         <a-button @click="submit">添加</a-button>
         <a-button @click="onReset">取消</a-button>
@@ -46,6 +53,7 @@
 import useAreaList from "../../hooks/arealist";
 import useBooksStore from "./store/useBooksStore";
 import useModal from "./hooks/useModal";
+import upload from '../../assets/imgupload.png'
 const {formModal,
   areaChange,
   classes,

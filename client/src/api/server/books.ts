@@ -1,6 +1,7 @@
 import http from '../index'
 
 // 获取列表
+export const BooksList = (params?:Record<string, any>) => http.get('/books/booksList',{params})
 // 编辑
 // 删除
 // 查看

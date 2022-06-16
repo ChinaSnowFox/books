@@ -72,7 +72,12 @@ const useModal = () =>{
     }
     const onSubmit = (data: {values: Record<string, any>; errors: Record<string, ValidatedError> | undefined}) => {
         if (!data.errors){
-            BooksAddPost(data.values)
+            BooksAddPost(data.values).then(res=>{
+                if (res.status === 202)
+                Message.success(res.data)
+                else Message.warning(res.data)
+                onReset()
+            })
         }else {
             Message.warning("请先输入表单中的数据再添加")
         }

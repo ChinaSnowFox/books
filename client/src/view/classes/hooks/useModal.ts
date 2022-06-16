@@ -15,7 +15,7 @@ const useModal = () => {
         className:'',
         area:''
     })
-    const areaList = ref([])
+    const areaList = ref<{[item:string]:string}[]>([])
     const title = ref<string>('添加')
     watch(()=>store.id,(o)=>{
         if (o) ClassesID(o).then(res=>{
@@ -65,13 +65,6 @@ const useModal = () => {
 
 
     }
-
-
-    // onMounted(()=>{
-    //     getAreaList().then(res=>{
-    //         areaList.value = res.data.list
-    //     })
-    // })
 
     return {
         // areaList,

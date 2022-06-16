@@ -1,12 +1,32 @@
-const {Class,Area} = require('../db')
+const {Class,Area,Book} = require('../db')
 const Id = require('../model/id')
 const {sends} = require('../model/status')
+const {loadFont} = require("svg-captcha");
 async function booksAdd (req,res) {
-    console.log(req.body)
+    // console.log(req.body)
+    const {title:books_title,name:books_name,seo:books_keyword,number:amount,area,class:Classes} = req.body
+    const name = await Book.findOne({books_name:req.body.name})
+    if (name) return res.status(204).send('已有该书籍')
+    const areas = await Area.findOne({_id:Id(area)})
+    const classes = await Class.findOne({_id:Id(Classes)})
+    // console.log(areas)
+    // console.log(classes)
+    const books = new Book({
+        books_title,
+        books_name,
+        books_keyword,
+        amount,
+        area:areas.area_name,
+        class:classes.className
+    })
+    books.save()
+    return res.status(202).send('添加成功')
 }
 
 async function booksList (req,res) {
-
+    const books = await Book.find({})
+    // console.log(books)
+    return res.status(200).send(sends(books,200))
 }
 
 async function booksPut (req,res) {
