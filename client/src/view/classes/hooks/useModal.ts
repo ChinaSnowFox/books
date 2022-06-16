@@ -67,14 +67,14 @@ const useModal = () => {
     }
 
 
-    onMounted(()=>{
-        getAreaList().then(res=>{
-            areaList.value = res.data.list
-        })
-    })
+    // onMounted(()=>{
+    //     getAreaList().then(res=>{
+    //         areaList.value = res.data.list
+    //     })
+    // })
 
     return {
-        areaList,
+        // areaList,
         addModal,
         form,
         onsubmit,

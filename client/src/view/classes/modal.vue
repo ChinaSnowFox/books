@@ -27,7 +27,9 @@
 import useModal from "./hooks/useModal";
 import useClassesStore from "./store";
 const store = useClassesStore()
-const {areaList,addModal,form,onsubmit,title} = useModal()
+import useAreaList from "../../hooks/arealist";
+const areaList = useAreaList()
+const {addModal,form,onsubmit,title} = useModal()
 </script>
 
 <style scoped>

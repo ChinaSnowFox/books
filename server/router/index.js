@@ -32,5 +32,7 @@ router.use('/area',require('./area.js'))
 router.use('/classes',require('./classes.js'))
 // 图片上传
 router.use('/img',require('./imgs.js'))
+// 书籍管理
+router.use('/books',require('./books.js'))
 
 module.exports = router

@@ -24,10 +24,9 @@
 
 <script setup lang="ts">
 import useHead from "./hooks/useHead";
-import useModal from "./hooks/useModal";
 import useTable from "./hooks/useTable";
-
-const {areaList} = useModal()
+import useAreaList from "../../hooks/arealist";
+const areaList = useAreaList()
 const {area_add} = useHead()
 const {formSearch,onSearch,onreset} = useTable()
 

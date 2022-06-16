@@ -4,6 +4,7 @@ const book = {
         type:String,
         requird:true
     },
+    // 封面图
     books_img:{
         type:String,
         requird:true
@@ -27,6 +28,11 @@ const book = {
     books_keyword:{
         type:String,
         requird: true
+    },
+    // 数量
+    amount:{
+        type:Number,
+        requird:true
     },
     create_time:{
         type:Date,
